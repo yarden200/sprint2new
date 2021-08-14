@@ -2,7 +2,174 @@
     box-sizing: border-box;
 }
 
-body{
+/* FONTS */
+
+@font-face {
+    font-family: solid;
+    src: url(/awesome/fa-solid-900.ttf);
+}
+
+.fas::before {
+    font-family: solid;
+}
+
+/* icons */
+
+.fas.fa-align-justify::before {
+    content: "\f039";
+}
+
+.fas.fa-align-left::before {
+    content: "\f036";
+}
+
+.fas.fa-align-right::before {
+    content: "\f038";
+}
+
+.fas.fa-eraser::before {
+    content: "\f12d";
+}
+
+body {
     margin: 0;
-    background-color: blanchedalmond;
+    background-color: #22252c;
+    ;
+}
+
+/* LAYOUTS */
+
+.main-layout {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.editor {
+    position: fixed;
+    background-color: rgb(103, 109, 196);
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+    gap: 1.5rem;
+    transition: opacity 0.6s;
+
+}
+
+body.editor-open .editor {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.editor-layout{
+    max-width: 1100px;
+    justify-content: center;
+}
+
+.canvas-container {
+    flex: 1;
+    margin-inline-start: 15px;
+    margin-block-start: 15px;
+}
+
+.control-box-container {
+    flex: 1;
+}
+
+.control-box {
+    flex: 1;
+    flex-direction: column;
+    max-width: 350px;
+}
+
+.editor-btn{
+    background-color: #fff;
+    padding: 15px;
+}
+
+.add-line{
+    margin-bottom: 15px;
+}
+.edit-line{
+    margin-bottom: 15px;
+}
+.edit-text{
+    background-color: rgb(1, 82, 97);
+    margin-bottom: 15px;
+}
+
+
+
+.header-container {
+    background-image: linear-gradient(-86deg, #33be6d 0%, #0c98b9 100%);
+    border-radius: 37px;
+    color: white;
+    margin-bottom: 10px;
+    height: 73px;
+}
+
+.main-nav{
+    gap: 10px;
+}
+
+.main-nav li a {
+    height: 30px;
+    font-size: large;
+    color: white;
+}
+
+.main-nav li:hover {
+    background-color: white;
+}
+
+.main-nav li a:hover{
+    color: rgb(5, 114, 98);
+}
+
+
+
+
+.main-content {
+    background-color: #383b42;
+}
+
+.gallery {
+    max-width: 1120px;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-evenly;
+}
+
+.gallery-img {
+    width: 200px;
+    height: 170px;
+}
+
+/* HELPERS */
+
+/* flex */
+
+.flex {
+    display: flex;
+}
+
+.flex.space-between {
+    justify-content: space-between;
+}
+
+.flex.space-around {
+    justify-content: space-around;
+}
+
+.flex.align-center {
+    align-items: center;
+}
+
+.clean-list {
+    padding-inline-start: 0px;
+    margin: 0;
+    list-style-type: none;
 }

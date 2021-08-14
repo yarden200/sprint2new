@@ -10,28 +10,66 @@
 </head>
 
 <body onload="onInit()">
-    <header>
-        <div class="logo">
-            <h1>Meme Generator</h1>
+
+    <section class="editor main-layout">
+        <div class="editor-layout flex align-center">
+            <div class="canvas-container">
+                <canvas id="my-canvas" height="500" width="500"> </canvas>
+            </div>
+            <div class="control-box-container">
+                <div class="control-box flex align-center">
+                    <button onclick="onCloseEditor()">BACK</button>
+                    <div class="add-line">
+                        <input class="add-txt-input" type="text" name="textLine" placeholder="Enter Text Line" />
+                        <button class="btn add-text-btn" onclick="onAddText()">Add Text</button>
+                    </div>
+                    <div class="edit-line">
+                        <button class="fas fa-eraser editor-btn" onclick="onDeleteLine()"></button>
+                        <button class="editor-btn" onclick="onAddLine()">Add line</button>
+                        <button class="editor-btn" onclick="onSwitchLine()">Switch Line</button>
+                    </div>
+                    <div class="edit-text">
+                        <div><button class="editor-btn" onclick="onMoveLine(-1)">&uarr;</button>
+                            <button class="editor-btn" onclick="onMoveLine(1)">&darr;</button>
+                            <button class="editor-btn" onclick="onChangeFontSize(2)">+</button>
+                            <button class="editor-btn" onclick="onChangeFontSize(-2)">-</button>
+                        </div>
+                        <div>
+                            <button class="fas fa-align-left editor-btn" onclick="onTextAlign('left')"></button>
+                            <button class="fas fa-align-justify editor-btn" onclick="onTextAlign('center')"></button>
+                            <button class="fas fa-align-right editor-btn" onclick="onTextAlign('right')"></button>
+                        </div>
+                    </div>
+                    <div class="editor-color-and-font">
+                        <input type="color" name="colorPicker" onchange="onPickColor(this.value)">
+                        <select name="fontPicker" onchange="onChangeFont(this.value)">
+                            <option value="IMPACT">IMPACT</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Verdana">Verdana</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="main-nav">
-            <ul>
+
+    </section>
+
+    <header>
+        <div class="header-container main-layout flex  align-center space-around">
+            <div class="logo">
+                <h1>Meme Generator</h1>
+            </div>
+            <ul class="main-nav flex clean-list">
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </div>
     </header>
 
-    <section class="editor">
-        <div class="canvas-container">
-            <canvas id="my-canvas" height="500" width="500"> </canvas>
-        </div>
-        <div class="tools-container"></div>
-    </section>
-
-
-    <section class="main-content">
-        <div class="gallery"></div>
+    <section class="main-content main-layout">
+        <div class="gallery flex"></div>
     </section>
 
 
